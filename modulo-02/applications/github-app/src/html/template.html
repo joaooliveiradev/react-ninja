@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%= htmlWebpackPlugin.options.title %>
+
+    </title>
+    <style>
+        <%=compilation.assets["crp.css"].source() %>
+    </style>
+</head>
+
+<body>
+    <div data-js="app"></div>
+    <% htmlWebpackPlugin.files.js.forEach((jsFile)=> { %>
+        <script async src="<%=jsFile%>"></script>
+        <% }) %>
+            <% htmlWebpackPlugin.files.css.forEach((cssFile)=> { %>
+                <% if(cssFile !=="crp.css" ) { %>
+                    <link rel="stylesheet" href="<%=cssFile%>">
+                    <% } %>
+                        <% }) %>
+
+
+</body>
+
+</html>

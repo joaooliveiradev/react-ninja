@@ -1,0 +1,57 @@
+{
+  "name": "react-webpack",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "@fdaciuk/ajax": "^3.0.4",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2"
+  },
+  "devDependencies": {
+    "@kadira/storybook": "^2.21.0",
+    "babel-core": "^6.26.3",
+    "babel-jest": "21",
+    "babel-loader": "^6.4.1",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "chai": "^4.3.4",
+    "cross-env": "^7.0.3",
+    "css-loader": "^0.28.11",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "gulp": "^4.0.2",
+    "html-webpack-plugin": "^2.30.1",
+    "jest-cli": "21",
+    "react-hot-loader": "^3.0.0-beta.2",
+    "snazzy": "^9.0.0",
+    "standard": "^16.0.3",
+    "standard-loader": "^4.0.0",
+    "style-loader": "^0.13.1",
+    "webpack": "^1.15.0",
+    "webpack-dashboard": "^3.3.3",
+    "webpack-dev-server": "^1.16.5",
+    "webpack-validator": "^3.0.1"
+  },
+  "scripts": {
+    "start": "webpack-dashboard -- node server.js",
+    "build": "cross-env NODE_ENV=production webpack --progress --config webpack.prod.config -p ",
+    "storybook": "start-storybook -p 6006 -c storybook",
+    "build-storybook": "build-storybook -c storybook",
+    "test": "jest --coverage",
+    "lint": "standard --verbose || snazzy",
+    "lint:watch": "gulp",
+    "lint:fix": "standard --fix",
+    "test:watch": "yarn test -- --watchAll",
+    "preinstall": "npx npm-force-resolutions"
+  },
+  "standard": {
+    "globals": [
+      "test",
+      "it",
+      "describe"
+    ]
+  },
+  "author": "",
+  "license": "ISC"
+}
